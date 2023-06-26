@@ -1,11 +1,9 @@
 // https://www.codewars.com/kata/520b9d2ad5c005041100000f
 
-export function pig(text: string) {
-  const wordRegex = /[a-zA-Z]+/g
+export function translateToPigLatin(text: string) {
+  const wordsRegex = /([a-zA-Z])([a-zA-Z]+)/g
 
-  const result = text.replaceAll(wordRegex, (word) => {
-    return `${word.slice(1)}${word[0]}ay`
-  })
+  const translatedText = text.replaceAll(wordsRegex, '$2$1ay')
 
-  return result
+  return translatedText
 }
